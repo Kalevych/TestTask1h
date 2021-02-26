@@ -12,19 +12,11 @@ import kotlinx.coroutines.withContext
 
 
 class SignupRepository() {
+    private var user: User? = null
 
-    val currentUser: MutableLiveData<User> = MutableLiveData<User>(EmptyUser)
-
-    suspend fun signupUser(user: User) {
-        withContext(Dispatchers.IO) {
-
-         //   val userFromNetwork = SignupServiceImpl.signupServiceImpl.signupUser()
-
-         //   database.usersDao.deleteAndInsertAll(userFromNetwork.results.asDatabaseModel())
-
-            currentUser.postValue(
-               user
-            )
-        }
+    fun putUser(user: User){
+        this.user = user
     }
+
+    fun getUser() = user
 }

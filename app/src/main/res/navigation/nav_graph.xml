@@ -6,9 +6,9 @@
 
     <fragment
         android:id="@+id/fragmentSignup"
-        android:name="com.afkoders."
+        android:name="com.afkoders.testtask1h.ui.SignupFragment"
         android:label="fragment_users_list"
-        tools:layout="@layout/fragment_signup" >
+        tools:layout="@layout/fragment_signup">
         <action
             android:id="@+id/fragmentSignup_to_fragmentSuccess"
             app:destination="@id/fragmentSuccess" />
@@ -16,9 +16,8 @@
 
     <fragment
         android:id="@+id/fragmentSuccess"
-        android:name="com.afkoders."
+        android:name="com.afkoders.testtask1h.ui.SuccessFragment"
         android:label="fragment_users_list"
-        tools:layout="@layout/fragment_success" >
-    </fragment>
+        tools:layout="@layout/fragment_success" />
 
 </navigation>

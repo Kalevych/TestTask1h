@@ -2,6 +2,7 @@ package com.afkoders.testtask1h.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.*
+import com.afkoders.testtask1h.domain.SignupUseCase
 import com.afkoders.testtask1h.domain.models.User
 import com.afkoders.testtask1h.repository.SignupRepository
 import kotlinx.coroutines.launch
@@ -13,11 +14,11 @@ import kotlinx.coroutines.launch
 
 class SignupViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val signupRepository = SignupRepository()
+    private val signupUseCase = SignupUseCase()
 
   fun signupUser(username: String, mail: String) {
         viewModelScope.launch {
-            signupRepository.signupUser(User(getRandomUUID(), username, mail))
+            signupUseCase.signupUser(User(getRandomUUID(), username, mail))
         }
     }
 
@@ -25,7 +26,7 @@ class SignupViewModel(application: Application) : AndroidViewModel(application) 
         "AMLKklsadaskldasl,kflsv"
 
 
-    val currentUser = signupRepository.currentUser
+    val currentUser = signupUseCase.currentUser
 
 
     class Factory(val app: Application) : ViewModelProvider.Factory {
