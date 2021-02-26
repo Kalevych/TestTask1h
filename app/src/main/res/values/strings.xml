@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TestTask1h</string>
+    <string name="update_user">register</string>
+    <string name="signup_successfull">Signup Successfull</string>
 </resources>
